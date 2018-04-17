@@ -1,5 +1,6 @@
 var ball;
 var speedScale=1;
+
 function setup() {
   createCanvas(windowWidth,windowHeight);
   ball=new BowlingBall();
@@ -14,6 +15,10 @@ function draw() {
     ball.update();
     ball.display();
     ball.showVel();
+    
+    if(ball.pos.x>width){
+      ball.reset();
+    }
     // ball.graphPos()
     // ball.graphVel()
     //ball.showGraphs();
